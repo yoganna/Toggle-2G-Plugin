@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Toggle 2G Plug-in</string>
+    <string name="widget_name">Toggle 2G</string>
+    
+    <string name="no2g">This plugin requires the &lt;a href=\'http://forum.xda-developers.com/showthread.php?t=739530\'&gt;Toggle 2G&lt;/a&gt; application to be installed.  It will not work without it.</string>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:installLocation="internalOnly"
+    package="com.mb.toggle2g.plugin.notification"
+    android:versionCode="9000000008"
+    android:versionName="0.0.8" >
+
+    <uses-sdk android:minSdkVersion="7" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <activity
+            android:icon="@drawable/icon"
+            android:name=".DummyActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".NotificationPlugin" >
+            <intent-filter>
+                <action android:name="com.mb.notification.CONTROL" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".widget.ToggleAppWidgetProvider"
+            android:label="@string/widget_name" >
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_toggle" />
+
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".widget.Toggle2GWidgetReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.mb.toggle.widget.SET" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
